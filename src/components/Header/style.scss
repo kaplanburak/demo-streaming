@@ -2,13 +2,43 @@
 
 header {
     width: 100vw;
-    background-color: $demo-gray; 
+    background-color: $gray; 
     color:white;
-    box-shadow: 0 1px 15px 1px black;
+    box-shadow: 0 2px 5px 1px $gray-dark;
 }
 
 nav {
-    height: 50px;
-    background-color: $demo-blue;
-    box-shadow: 0 1px 15px 1px black;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: $blue;
+    
+    padding: 0.5rem $side-spacing;
+    
+    box-shadow: 0 2px 5px 1px $gray-dark;
+
+    h1 {
+        font-weight: 600;
+        font-size: 28px;
+    }
+
+    span {
+        color: white;
+        font-size: 12px;
+        margin-right: 2rem;
+        cursor: pointer;
+    }
 }
+
+#page-title {
+    padding: 0.5rem $side-spacing;
+
+    h2 {
+        font-weight: 500;
+        font-size: 20px;
+    }
+}
+
+
