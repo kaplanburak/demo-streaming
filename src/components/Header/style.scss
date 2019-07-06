@@ -1,0 +1,14 @@
+@import '../../styles/main.scss';
+
+header {
+    width: 100vw;
+    background-color: $demo-gray; 
+    color:white;
+    box-shadow: 0 1px 15px 1px black;
+}
+
+nav {
+    height: 50px;
+    background-color: $demo-blue;
+    box-shadow: 0 1px 15px 1px black;
+}
