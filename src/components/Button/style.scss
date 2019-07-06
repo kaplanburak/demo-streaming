@@ -1,15 +1,15 @@
-@import '../../styles/main.scss';
+@import "../../styles/main.scss";
 
-button{
-    background-color: $gray;
-    color: white;
-    font-size: 12px;
-    border: none;
-    padding: 0.4rem 0.6rem;
-    background-image: linear-gradient($gray-light, $gray, $gray-dark);
-    cursor: pointer;
+button {
+  background-color: $gray;
+  color: white;
+  font-size: 12px;
+  border: none;
+  padding: 0.4rem 0.6rem;
+  background-image: linear-gradient($gray-light, $gray, $gray-dark);
+  cursor: pointer;
 }
 
-button:active{
-    background-image: linear-gradient($gray-light, $gray);
+button:active {
+  background-image: linear-gradient($gray-light, $gray);
 }
