@@ -13,15 +13,15 @@ nav {
   justify-content: space-between;
   align-items: center;
 
-  background-color: $blue;
+  background-image: linear-gradient($blue-light, $blue, $blue-dark);
 
-  padding: 0.5rem $side-spacing;
+  padding: 0.7rem $side-spacing;
 
   box-shadow: 0 2px 5px 1px $gray-dark;
 
   h1 {
     font-weight: 600;
-    font-size: 28px;
+    font-size: 2rem;
   }
 
   span {
@@ -30,13 +30,32 @@ nav {
     margin-right: 2rem;
     cursor: pointer;
   }
+
+  button {
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+}
+
+#button-gray {
+  border: none;
+  padding: 0.6rem;
+  margin-left: 2rem;
+
+  background-image: linear-gradient($gray-light, $gray, $gray-dark);
+  cursor: pointer;
+
+  &:active {
+    background-image: linear-gradient($gray-light, $gray);
+  }
 }
 
 #page-title {
-  padding: 0.5rem $side-spacing;
+  padding: 0.7rem $side-spacing;
 
   h2 {
     font-weight: 500;
-    font-size: 20px;
+    font-size: 1.5rem;
   }
 }

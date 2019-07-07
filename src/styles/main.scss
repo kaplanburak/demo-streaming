@@ -1,11 +1,17 @@
 $side-spacing: 10vw;
 
 $blue: #017efe;
+$blue-light: #0094fe;
+$blue-dark: #006aff;
+
 $gray: #414141;
 $gray-light: #434343;
 $gray-dark: #1e1e1e;
 
-.link-white {
-  color: white;
-  text-decoration: none;
+.button-ghost {
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
 }

@@ -1,22 +1,16 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import "./style.scss";
-import Button from "../Button";
 
 const Header = () => {
   return (
     <header>
       <nav>
         <div>
-          <h1>
-            <Link to="/" className="link-white">
-              DEMO Streaming
-            </Link>
-          </h1>
+          <h1>DEMO Streaming</h1>
         </div>
         <div>
-          <span>Log in</span>
-          <Button innerText="Start your free trial" />
+          <button className="button-ghost">Log in</button>
+          <button id="button-gray">Start your free trial</button>
         </div>
       </nav>
       <div id="page-title">
