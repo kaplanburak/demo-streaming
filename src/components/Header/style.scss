@@ -3,38 +3,36 @@
 header {
   min-height: 7rem;
   background-color: $gray;
+  box-shadow: 0 2px 5px 1px $gray-dark;
   color: white;
-  box-shadow: 0 2px 5px 1px $gray-dark;
-}
 
-nav {
-  display: flex;
-  flex-wrap: nowrap;
-  justify-content: space-between;
-  align-items: center;
+  nav {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
 
-  background-image: linear-gradient($blue-light, $blue, $blue-dark);
+    background-image: linear-gradient($blue-light, $blue, $blue-dark);
 
-  padding: 0.7rem $side-spacing;
+    padding: 0.7rem $side-spacing;
 
-  box-shadow: 0 2px 5px 1px $gray-dark;
+    box-shadow: 0 2px 5px 1px $gray-dark;
 
-  h1 {
-    font-weight: 600;
-    font-size: 2rem;
-  }
+    h1 {
+      font-weight: 600;
+      font-size: 2rem;
 
-  span {
-    color: white;
-    font-size: 12px;
-    margin-right: 2rem;
-    cursor: pointer;
-  }
+      a {
+        color: white;
+        text-decoration: none;
+      }
+    }
 
-  button {
-    color: white;
-    font-size: 0.9rem;
-    font-weight: 600;
+    button {
+      color: white;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
   }
 }
 

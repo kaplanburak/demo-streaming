@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./style.scss";
 
 const Header = () => {
@@ -6,7 +7,9 @@ const Header = () => {
     <header>
       <nav>
         <div>
-          <h1>DEMO Streaming</h1>
+          <h1>
+            <Link to="/">DEMO Streaming</Link>
+          </h1>
         </div>
         <div>
           <button className="button-ghost">Log in</button>
