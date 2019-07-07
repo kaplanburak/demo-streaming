@@ -1,5 +1,5 @@
 import React from "react";
-import sample from "../sample.json";
+import sample from "../../sample.json";
 
 const Movies = () => {
   const sampleMovies = sample.entries

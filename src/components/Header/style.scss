@@ -1,7 +1,7 @@
 @import "../../styles/main.scss";
 
 header {
-  width: 100vw;
+  min-height: 7rem;
   background-color: $gray;
   color: white;
   box-shadow: 0 2px 5px 1px $gray-dark;

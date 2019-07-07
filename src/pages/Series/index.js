@@ -1,5 +1,5 @@
 import React from "react";
-import sample from "../sample.json";
+import sample from "../../sample.json";
 
 const Series = () => {
   const sampleSeries = sample.entries

@@ -8,6 +8,10 @@ $gray: #414141;
 $gray-light: #434343;
 $gray-dark: #1e1e1e;
 
+main {
+  min-height: calc(100vh - 27rem);
+}
+
 .button-ghost {
   margin: 0;
   padding: 0;

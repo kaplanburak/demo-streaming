@@ -1,0 +1,37 @@
+@import "../../styles/main.scss";
+
+#wrapper {
+  margin-bottom: 3rem;
+  cursor: pointer;
+}
+
+#card {
+  background-color: $gray-dark;
+  width: 10rem;
+  height: 15rem;
+  position: relative;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+
+  img {
+    width: 20rem;
+    margin-left: -5rem;
+  }
+
+  span {
+    color: white;
+    font-weight: 500;
+    font-size: 2rem;
+    position: absolute;
+  }
+}
+
+#title {
+  padding-top: 1rem;
+
+  span {
+    margin: 0;
+    font-weight: 500;
+  }
+}
