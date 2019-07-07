@@ -2,8 +2,8 @@
 
 #card {
   background-color: $gray-dark;
-  width: 10rem;
-  height: 15rem;
+  width: $card-width;
+  height: $card-height;
   position: relative;
   display: grid;
   place-items: center;

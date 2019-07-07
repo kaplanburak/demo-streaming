@@ -1,5 +1,6 @@
 import React from "react";
 import sample from "../../sample.json";
+import ProgramList from "../../components/ProgramList";
 
 const Movies = () => {
   const sampleMovies = sample.entries
@@ -16,7 +17,11 @@ const Movies = () => {
 
   console.log(sampleMovies);
 
-  return <h1>Movies</h1>;
+  return (
+    <main>
+      <ProgramList programs={sampleMovies} />
+    </main>
+  );
 };
 
 export default Movies;

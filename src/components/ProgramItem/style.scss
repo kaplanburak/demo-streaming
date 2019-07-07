@@ -1,0 +1,26 @@
+@import "../../styles/main.scss";
+
+#item-wrapper {
+  padding-bottom: 3rem;
+  max-width: $card-width;
+}
+
+#poster {
+  width: $card-width;
+  height: $card-height;
+  cursor: pointer;
+
+  img {
+    width: 10rem;
+  }
+}
+
+#title {
+  padding-top: 1rem;
+  cursor: pointer;
+
+  span {
+    margin: 0;
+    font-weight: 500;
+  }
+}

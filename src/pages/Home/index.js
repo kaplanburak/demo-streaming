@@ -4,7 +4,7 @@ import ProgramType from "../../components/ProgramType";
 
 const Home = () => {
   return (
-    <main>
+    <main id="main-home">
       <ProgramType typeName="Series" />
       <ProgramType typeName="Movies" />
     </main>
