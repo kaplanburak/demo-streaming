@@ -1,0 +1,81 @@
+@import "../../styles/main.scss";
+
+footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  display: flex;
+  flex-flow: row wrap;
+
+  padding: 2rem $side-spacing;
+
+  background-color: $gray-dark;
+  color: white;
+
+  font-size: 0.8rem;
+
+  > div {
+    width: 100%;
+  }
+}
+
+span {
+  margin: 0 1rem;
+}
+
+p {
+  opacity: 0.6;
+}
+
+#links {
+  margin-bottom: 1rem;
+
+  > * {
+    opacity: 0.8;
+  }
+}
+
+.link-footer {
+  color: white;
+  text-decoration: none;
+
+  &:hover {
+    opacity: 1 !important;
+  }
+}
+
+#buttons {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  margin-top: 2rem;
+
+  #buttons-social {
+    button {
+      margin-right: 1.5rem;
+    }
+  }
+
+  #buttons-store {
+    button {
+      margin-left: 1.5rem;
+    }
+  }
+}
+
+.svg-store {
+  height: 2.5rem;
+}
+
+.svg-social {
+  height: 1.8rem;
+}
+
+.button-ghost {
+  margin: 0;
+  padding: 0;
+  background: none;
+  cursor: pointer;
+}

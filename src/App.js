@@ -4,6 +4,7 @@ import Home from "./pages/Home";
 import Movies from "./pages/Movies";
 import Series from "./pages/Series";
 import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
         <Route exact path="/movies" component={Movies} />
         <Route exact path="/series" component={Series} />
       </Switch>
+      <Footer />
     </BrowserRouter>
   );
 };
