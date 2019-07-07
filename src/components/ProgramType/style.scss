@@ -1,10 +1,5 @@
 @import "../../styles/main.scss";
 
-#wrapper {
-  margin-bottom: 3rem;
-  cursor: pointer;
-}
-
 #card {
   background-color: $gray-dark;
   width: 10rem;
@@ -13,6 +8,7 @@
   display: grid;
   place-items: center;
   overflow: hidden;
+  cursor: pointer;
 
   img {
     width: 20rem;
@@ -29,6 +25,7 @@
 
 #title {
   padding-top: 1rem;
+  cursor: pointer;
 
   span {
     margin: 0;

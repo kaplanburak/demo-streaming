@@ -18,12 +18,12 @@ class ProgramType extends React.Component {
     if (this.state.redirect) return <Redirect to={`/${typeName}`} />;
 
     return (
-      <div id="wrapper" onClick={() => this.setState({ redirect: true })}>
-        <div id="card">
+      <div>
+        <div id="card" onClick={() => this.setState({ redirect: true })}>
           <img src={placeholder} alt={typeName} />
           <span>{typeName.toUpperCase()}</span>
         </div>
-        <div id="title">
+        <div id="title" onClick={() => this.setState({ redirect: true })}>
           <span>Popular {typeName}</span>
         </div>
       </div>
