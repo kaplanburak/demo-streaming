@@ -1,6 +1,7 @@
 import React from "react";
-import ProgramList from "../ProgramList";
 import "./style.scss";
+import ProgramList from "../ProgramList";
+import SearchBar from "../SearchBar";
 
 const Content = ({ list, isLoading, gotError }) => {
   return (
@@ -10,7 +11,13 @@ const Content = ({ list, isLoading, gotError }) => {
       ) : gotError ? (
         <p>Oops, something went wrong...</p>
       ) : (
-        <ProgramList programs={list} />
+        <div>
+          <div id="filters">
+            <SearchBar />
+            <div>Filter</div>
+          </div>
+          <ProgramList programs={list} />
+        </div>
       )}
     </main>
   );
