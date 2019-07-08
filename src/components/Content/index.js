@@ -41,7 +41,14 @@ class Content extends React.Component {
               <FontAwesomeIcon icon={faSearch} />
             </div>
           </form>
-          <div></div>
+          <form id="sort-form">
+            <select>
+              <option>Sort by year in descending order.</option>
+              <option>Sort by year in ascending order.</option>
+              <option>Sort by title in descending order.</option>
+              <option>Sort by title in ascending order.</option>
+            </select>
+          </form>
         </div>
         {filteredList.length ? (
           <ProgramList programs={filteredList} />

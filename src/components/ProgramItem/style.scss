@@ -12,6 +12,7 @@
 
   img {
     width: 10rem;
+    @include light-shadow();
   }
 }
 
