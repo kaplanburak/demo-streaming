@@ -1,8 +1,8 @@
 import React from "react";
-import ProgramList from "../../components/ProgramList";
 import { connect } from "react-redux";
 import { getMovies } from "../../store/actions";
 import { setPageTitle } from "../../store/actions";
+import Content from "../../components/Content";
 
 class Movies extends React.Component {
   componentDidMount() {
@@ -13,17 +13,7 @@ class Movies extends React.Component {
 
   render() {
     const { list, isLoading, gotError } = this.props;
-    return (
-      <main>
-        {isLoading ? (
-          <p>Loading...</p>
-        ) : gotError ? (
-          <p>Oops, something went wrong...</p>
-        ) : (
-          <ProgramList programs={list} />
-        )}
-      </main>
-    );
+    return <Content list={list} isLoading={isLoading} gotError={gotError} />;
   }
 }
 
