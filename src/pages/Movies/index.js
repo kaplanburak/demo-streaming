@@ -1,7 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { getMovies } from "../../store/actions";
-import { setPageTitle } from "../../store/actions";
+import { setPageTitle, getMovies } from "../../actions";
 import Content from "../../components/Content";
 
 class Movies extends React.Component {

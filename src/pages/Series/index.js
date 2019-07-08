@@ -1,7 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { getSeries } from "../../store/actions";
-import { setPageTitle } from "../../store/actions";
+import { setPageTitle, getSeries } from "../../actions";
 import Content from "../../components/Content";
 
 class Series extends React.Component {

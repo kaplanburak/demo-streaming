@@ -6,7 +6,7 @@ import thunk from "redux-thunk";
 import App from "./App";
 import "typeface-raleway";
 import "./styles/reset.scss";
-import reducers from "./store/reducers";
+import reducers from "./reducers";
 
 const store = createStore(reducers, applyMiddleware(thunk));
 

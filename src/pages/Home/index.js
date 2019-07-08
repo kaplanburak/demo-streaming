@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import "./style.scss";
 import ProgramType from "../../components/ProgramType";
-import { setPageTitle } from "../../store/actions";
+import { setPageTitle } from "../../actions";
 
 class Home extends React.Component {
   componentDidMount() {
