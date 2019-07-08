@@ -1,8 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
 import "./style.scss";
 
-const Header = () => {
+const Header = ({ pageTitle }) => {
   return (
     <header>
       <nav>
@@ -17,10 +18,16 @@ const Header = () => {
         </div>
       </nav>
       <div id="page-title">
-        <h2>Popular Titles</h2>
+        <h2>{pageTitle}</h2>
       </div>
     </header>
   );
 };
 
-export default Header;
+const mapStateToProps = state => {
+  return {
+    pageTitle: state.app.pageTitle || ""
+  };
+};
+
+export default connect(mapStateToProps)(Header);

@@ -1,27 +1,45 @@
 import React from "react";
-import sample from "../../sample.json";
 import ProgramList from "../../components/ProgramList";
+import { connect } from "react-redux";
+import { getMovies } from "../../store/actions";
+import { setPageTitle } from "../../store/actions";
 
-const Movies = () => {
-  const sampleMovies = sample.entries
-    .filter(e => e.programType === "movie" && e.releaseYear >= 2010)
-    .slice(0, 21)
-    .sort((a, b) => {
-      const titleA = a.title.toUpperCase();
-      const titleB = b.title.toUpperCase();
+class Movies extends React.Component {
+  componentDidMount() {
+    const { setPageTitle, getMovies } = this.props;
+    setPageTitle("Popular Movies");
+    getMovies();
+  }
 
-      if (titleA < titleB) return -1;
-      if (titleA > titleB) return 1;
-      return 0;
-    });
+  render() {
+    const { list, isLoading, gotError } = this.props;
+    return (
+      <main>
+        {isLoading ? (
+          <p>Loading...</p>
+        ) : gotError ? (
+          <p>Oops, something went wrong...</p>
+        ) : (
+          <ProgramList programs={list} />
+        )}
+      </main>
+    );
+  }
+}
 
-  console.log(sampleMovies);
-
-  return (
-    <main>
-      <ProgramList programs={sampleMovies} />
-    </main>
-  );
+const mapStateToProps = state => {
+  const { list, isLoading, gotError } = state.movies;
+  return { list, isLoading, gotError };
 };
 
-export default Movies;
+const mapDispatchToProps = dispatch => {
+  return {
+    setPageTitle: title => dispatch(setPageTitle(title)),
+    getMovies: () => dispatch(getMovies())
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Movies);

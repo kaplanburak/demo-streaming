@@ -1,7 +1,13 @@
 import { combineReducers } from "redux";
 import actionTypes from "./actionTypes";
 
-const moviesReducer = (state = {}, action) => {
+const initialState = {
+  isLoading: true,
+  gotError: false,
+  list: []
+};
+
+const moviesReducer = (state = initialState, action) => {
   switch (action.type) {
     case actionTypes.GET_MOVIES_REQUEST:
       return {
@@ -10,16 +16,22 @@ const moviesReducer = (state = {}, action) => {
       };
     case actionTypes.GET_MOVIES_RESPONSE:
       return {
-        ...state,
         isLoading: false,
+        gotError: false,
         list: action.payload
+      };
+    case actionTypes.GET_MOVIES_ERROR:
+      return {
+        isLoading: false,
+        gotError: true,
+        list: []
       };
     default:
       return state;
   }
 };
 
-const seriesReducer = (state = {}, action) => {
+const seriesReducer = (state = initialState, action) => {
   switch (action.type) {
     case actionTypes.GET_SERIES_REQUEST:
       return {
@@ -28,9 +40,26 @@ const seriesReducer = (state = {}, action) => {
       };
     case actionTypes.GET_SERIES_RESPONSE:
       return {
-        ...state,
         isLoading: false,
+        gotError: false,
         list: action.payload
+      };
+    case actionTypes.GET_SERIES_ERROR:
+      return {
+        isLoading: false,
+        gotError: true,
+        list: []
+      };
+    default:
+      return state;
+  }
+};
+
+const appReducer = (state = {}, action) => {
+  switch (action.type) {
+    case actionTypes.SET_PAGE_TITLE:
+      return {
+        pageTitle: action.payload
       };
     default:
       return state;
@@ -39,5 +68,6 @@ const seriesReducer = (state = {}, action) => {
 
 export default combineReducers({
   movies: moviesReducer,
-  series: seriesReducer
+  series: seriesReducer,
+  app: appReducer
 });

@@ -1,27 +1,45 @@
 import React from "react";
-import sample from "../../sample.json";
 import ProgramList from "../../components/ProgramList";
+import { connect } from "react-redux";
+import { getSeries } from "../../store/actions";
+import { setPageTitle } from "../../store/actions";
 
-const Series = () => {
-  const sampleSeries = sample.entries
-    .filter(e => e.programType === "series" && e.releaseYear >= 2010)
-    .slice(0, 21)
-    .sort((a, b) => {
-      const titleA = a.title.toUpperCase();
-      const titleB = b.title.toUpperCase();
+class Series extends React.Component {
+  componentDidMount() {
+    const { setPageTitle, getSeries } = this.props;
+    setPageTitle("Popular Series");
+    getSeries();
+  }
 
-      if (titleA < titleB) return -1;
-      if (titleA > titleB) return 1;
-      return 0;
-    });
+  render() {
+    const { list, isLoading, gotError } = this.props;
+    return (
+      <main>
+        {isLoading ? (
+          <p>Loading...</p>
+        ) : gotError ? (
+          <p>Oops, something went wrong...</p>
+        ) : (
+          <ProgramList programs={list} />
+        )}
+      </main>
+    );
+  }
+}
 
-  console.log(sampleSeries);
-
-  return (
-    <main>
-      <ProgramList programs={sampleSeries} />
-    </main>
-  );
+const mapStateToProps = state => {
+  const { list, isLoading, gotError } = state.series;
+  return { list, isLoading, gotError };
 };
 
-export default Series;
+const mapDispatchToProps = dispatch => {
+  return {
+    setPageTitle: title => dispatch(setPageTitle(title)),
+    getSeries: () => dispatch(getSeries())
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Series);
