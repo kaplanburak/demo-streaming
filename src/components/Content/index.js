@@ -1,26 +1,56 @@
 import React from "react";
 import "./style.scss";
 import ProgramList from "../ProgramList";
-import SearchBar from "../SearchBar";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
-const Content = ({ list, isLoading, gotError }) => {
-  return (
-    <main>
-      {isLoading ? (
-        <p>Loading...</p>
-      ) : gotError ? (
-        <p>Oops, something went wrong...</p>
-      ) : (
-        <div>
-          <div id="filters">
-            <SearchBar />
-            <div>Filter</div>
-          </div>
-          <ProgramList programs={list} />
+class Content extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      searchTerm: ""
+    };
+  }
+
+  render() {
+    const { list, isLoading, gotError } = this.props;
+    if (isLoading) return <p>Loading...</p>;
+    if (gotError) return <p>Oops, something went wrong...</p>;
+
+    const { searchTerm, forceSearch } = this.state;
+    let filteredList = [...list];
+
+    if (searchTerm.length > 2 || forceSearch) {
+      filteredList = filteredList.filter(item =>
+        item.title.toUpperCase().includes(searchTerm.toUpperCase())
+      );
+    }
+
+    return (
+      <div>
+        <div id="filters">
+          <form id="search-form">
+            <input
+              type="text"
+              placeholder="Search..."
+              onChange={e => this.setState({ searchTerm: e.target.value })}
+              value={this.state.searchTerm}
+            />
+            <div id="icon-button">
+              <FontAwesomeIcon icon={faSearch} />
+            </div>
+          </form>
+          <div></div>
         </div>
-      )}
-    </main>
-  );
-};
+        {filteredList.length ? (
+          <ProgramList programs={filteredList} />
+        ) : (
+          <p>Sorry, we couldn't find any results matching "{searchTerm}"</p>
+        )}
+      </div>
+    );
+  }
+}
 
 export default Content;

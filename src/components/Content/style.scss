@@ -1,3 +1,5 @@
+@import "../../styles/main.scss";
+
 p {
   font-weight: 600;
 }
@@ -7,4 +9,34 @@ p {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 2rem;
+
+  #search-form {
+    display: flex;
+    align-items: center;
+    box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.1);
+
+    input {
+      box-sizing: border-box;
+      height: 2rem;
+      width: 30rem;
+      padding-left: 1rem;
+    }
+
+    div {
+      display: grid;
+      place-items: center;
+      height: 2rem;
+      padding: 0 1rem;
+    }
+  }
+}
+
+#icon-button {
+  background-color: $blue;
+  color: white;
+  cursor: pointer;
+
+  &:active {
+    background-color: $blue-light;
+  }
 }

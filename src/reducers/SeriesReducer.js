@@ -25,6 +25,11 @@ export default (state = initialState, action) => {
         gotError: true,
         list: []
       };
+    case actionTypes.series.FILTER_SEARCH:
+      return {
+        ...state,
+        searchTerm: action.payload
+      };
     default:
       return state;
   }

@@ -12,7 +12,11 @@ class Series extends React.Component {
 
   render() {
     const { list, isLoading, gotError } = this.props;
-    return <Content list={list} isLoading={isLoading} gotError={gotError} />;
+    return (
+      <main>
+        <Content list={list} isLoading={isLoading} gotError={gotError} />
+      </main>
+    );
   }
 }
 
