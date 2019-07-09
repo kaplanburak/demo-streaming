@@ -9,7 +9,8 @@ class Content extends React.Component {
     super(props);
 
     this.state = {
-      searchTerm: ""
+      searchTerm: "",
+      sortBy: ""
     };
   }
 
@@ -18,12 +19,44 @@ class Content extends React.Component {
     if (isLoading) return <p>Loading...</p>;
     if (gotError) return <p>Oops, something went wrong...</p>;
 
-    const { searchTerm, forceSearch } = this.state;
+    const { searchTerm, sortBy } = this.state;
     let filteredList = [...list];
 
-    if (searchTerm.length > 2 || forceSearch) {
+    if (searchTerm.length > 2) {
       filteredList = filteredList.filter(item =>
         item.title.toUpperCase().includes(searchTerm.toUpperCase())
+      );
+    }
+
+    if (sortBy.length) {
+      const key = sortBy.split("-")[0];
+      const order = sortBy.split("-")[1];
+
+      let lessThen = -1;
+      let greaterThen = 1;
+
+      if (order === "asc") {
+        lessThen *= -1;
+        greaterThen *= -1;
+      }
+
+      filteredList = filteredList.sort((a, b) => {
+        let valueA = a[key];
+        let valueB = b[key];
+
+        if (typeof valueA === "string") {
+          valueA = valueA.toUpperCase();
+          valueB = valueB.toUpperCase();
+        }
+
+        if (valueA < valueB) return lessThen;
+        if (valueA > valueB) return greaterThen;
+        return 0;
+      });
+
+      console.log(
+        sortBy,
+        filteredList.reduce((arr, i) => [...arr, i[key]], [])
       );
     }
 
@@ -35,18 +68,32 @@ class Content extends React.Component {
               type="text"
               placeholder="Search..."
               onChange={e => this.setState({ searchTerm: e.target.value })}
-              value={this.state.searchTerm}
+              value={searchTerm}
             />
             <div id="icon-button">
               <FontAwesomeIcon icon={faSearch} />
             </div>
           </form>
           <form id="sort-form">
-            <select>
-              <option>Sort by year in descending order.</option>
-              <option>Sort by year in ascending order.</option>
-              <option>Sort by title in descending order.</option>
-              <option>Sort by title in ascending order.</option>
+            <select
+              value={sortBy}
+              onChange={e => this.setState({ sortBy: e.target.value })}
+            >
+              <option value="" disabled>
+                Sort by
+              </option>
+              <option value="releaseYear-desc">
+                Sort by year in descending order.
+              </option>
+              <option value="releaseYear-asc">
+                Sort by year in ascending order.
+              </option>
+              <option value="title-desc">
+                Sort by title in descending order.
+              </option>
+              <option value="title-asc">
+                Sort by title in ascending order.
+              </option>
             </select>
           </form>
         </div>
