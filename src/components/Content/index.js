@@ -35,7 +35,7 @@ class Content extends React.Component {
       let lessThen = -1;
       let greaterThen = 1;
 
-      if (order === "asc") {
+      if (sortBy === "title-asc" || sortBy === "releaseYear-desc") {
         lessThen *= -1;
         greaterThen *= -1;
       }
