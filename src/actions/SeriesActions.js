@@ -20,7 +20,7 @@ export const getSeries = () => dispatch => {
         });
 
       const responseAction = {
-        type: actionTypes.series.GET_LIST_RESPONSE,
+        type: actionTypes.series.GET_LIST_SUCCESS,
         payload: series
       };
 

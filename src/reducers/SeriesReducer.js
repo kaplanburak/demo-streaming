@@ -13,7 +13,7 @@ export default (state = initialState, action) => {
         ...state,
         isLoading: true
       };
-    case actionTypes.series.GET_LIST_RESPONSE:
+    case actionTypes.series.GET_LIST_SUCCESS:
       return {
         isLoading: false,
         gotError: false,

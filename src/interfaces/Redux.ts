@@ -1,8 +1,5 @@
-export interface IMoviesReduxState {
-  isLoading: boolean;
-  gotError: boolean;
-  list: object[];
-}
+import { IMoviesState } from "./Movies";
+import reducers from "../reducers";
 
 export interface ISeriesReduxState {
   isLoading: boolean;
@@ -21,8 +18,10 @@ export interface IAction {
 
 export interface IState {
   app: IAppReduxState;
-  movies: IMoviesReduxState;
+  movies: IMoviesState;
   series: ISeriesReduxState;
 }
 
-export type IDispatch = (action: () => IAction) => IAction;
+export type TReduxState = ReturnType<typeof reducers>;
+
+//export type IDispatch = (action: () => IAction) => IAction;

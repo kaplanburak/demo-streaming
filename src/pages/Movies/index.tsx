@@ -1,17 +1,19 @@
 import React from "react";
 import { connect } from "react-redux";
+import { ThunkDispatch } from "redux-thunk";
 import { getMovies, setPageTitle } from "../../actions";
 import Content from "../../components/Content";
+import { TReduxState, IMoviesProps, IAction } from "../../interfaces";
 
-class Movies extends React.Component {
-  componentDidMount() {
-    const { setPageTitle, getMovies } = this.props;
+class Movies extends React.Component<IMoviesProps, {}> {
+  componentDidMount(): void {
+    const { setPageTitle, getMovies }: IMoviesProps = this.props;
     setPageTitle("Popular Movies");
     getMovies();
   }
 
-  render() {
-    const { list, isLoading, gotError } = this.props;
+  render(): JSX.Element {
+    const { list, isLoading, gotError }: IMoviesProps = this.props;
     return (
       <main>
         <Content list={list} isLoading={isLoading} gotError={gotError} />
@@ -20,14 +22,14 @@ class Movies extends React.Component {
   }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state: TReduxState) => {
   const { list, isLoading, gotError } = state.movies;
   return { list, isLoading, gotError };
 };
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch: ThunkDispatch<TReduxState, null, IAction>) => {
   return {
-    setPageTitle: title => dispatch(setPageTitle(title)),
+    setPageTitle: (title: string) => dispatch(setPageTitle(title)),
     getMovies: () => dispatch(getMovies())
   };
 };

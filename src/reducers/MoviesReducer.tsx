@@ -1,20 +1,20 @@
 import actionTypes from "../actions/ActionTypes";
-import { IMoviesReduxState, IAction } from "../interfaces";
+import { IMoviesState, IAction } from "../interfaces";
 
-const initialState: IMoviesReduxState = {
+const initialState: IMoviesState = {
   isLoading: true,
   gotError: false,
   list: []
 };
 
-export default (state: IMoviesReduxState = initialState, action: IAction): IMoviesReduxState => {
+export default (state: IMoviesState = initialState, action: IAction): IMoviesState => {
   switch (action.type) {
     case actionTypes.movies.GET_LIST_REQUEST:
       return {
         ...state,
         isLoading: true
       };
-    case actionTypes.movies.GET_LIST_RESPONSE:
+    case actionTypes.movies.GET_LIST_SUCCESS:
       return {
         isLoading: false,
         gotError: false,

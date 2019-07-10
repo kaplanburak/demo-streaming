@@ -1,6 +1,8 @@
+import { ThunkAction } from "redux-thunk";
 import actionTypes from "./ActionTypes";
+import { TReduxState, IMovie, IAction } from "../interfaces";
 
-export const getMovies = () => dispatch => {
+export const getMovies = (): ThunkAction<IAction, TReduxState, null, IAction> => (dispatch): any => {
   const requestAction = { type: actionTypes.movies.GET_LIST_REQUEST };
   dispatch(requestAction);
 
@@ -8,9 +10,9 @@ export const getMovies = () => dispatch => {
     .then(response => response.json())
     .then(data => {
       const movies = data.entries
-        .filter(e => e.programType === "movie" && e.releaseYear >= 2010)
+        .filter((e: IMovie) => e.programType === "movie" && e.releaseYear >= 2010)
         .slice(0, 21)
-        .sort((a, b) => {
+        .sort((a: IMovie, b: IMovie) => {
           const titleA = a.title.toUpperCase();
           const titleB = b.title.toUpperCase();
 
@@ -20,7 +22,7 @@ export const getMovies = () => dispatch => {
         });
 
       const responseAction = {
-        type: actionTypes.movies.GET_LIST_RESPONSE,
+        type: actionTypes.movies.GET_LIST_SUCCESS,
         payload: movies
       };
 
