@@ -1,12 +1,13 @@
 import actionTypes from "../actions/ActionTypes";
+import { ISeriesState, IAction } from "../interfaces";
 
-const initialState = {
+const initialState: ISeriesState = {
   isLoading: true,
   gotError: false,
   list: []
 };
 
-export default (state = initialState, action) => {
+export default (state: ISeriesState = initialState, action: IAction): ISeriesState => {
   switch (action.type) {
     case actionTypes.series.GET_LIST_REQUEST:
       return {
@@ -24,11 +25,6 @@ export default (state = initialState, action) => {
         isLoading: false,
         gotError: true,
         list: []
-      };
-    case actionTypes.series.FILTER_SEARCH:
-      return {
-        ...state,
-        searchTerm: action.payload
       };
     default:
       return state;

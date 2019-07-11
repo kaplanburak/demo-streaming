@@ -1,6 +1,8 @@
+import { ThunkAction } from "redux-thunk";
 import actionTypes from "./ActionTypes";
+import { TReduxState, ISeries, IAction } from "../interfaces";
 
-export const getSeries = () => dispatch => {
+export const getSeries = (): ThunkAction<IAction, TReduxState, null, IAction> => (dispatch): any => {
   const requestAction = { type: actionTypes.series.GET_LIST_REQUEST };
   dispatch(requestAction);
 
@@ -8,9 +10,9 @@ export const getSeries = () => dispatch => {
     .then(response => response.json())
     .then(data => {
       const series = data.entries
-        .filter(e => e.programType === "series" && e.releaseYear >= 2010)
+        .filter((e: ISeries) => e.programType === "series" && e.releaseYear >= 2010)
         .slice(0, 21)
-        .sort((a, b) => {
+        .sort((a: ISeries, b: ISeries) => {
           const titleA = a.title.toUpperCase();
           const titleB = b.title.toUpperCase();
 
