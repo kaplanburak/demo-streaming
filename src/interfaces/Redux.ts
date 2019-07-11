@@ -7,7 +7,7 @@ export interface ISeriesReduxState {
   list: object[];
 }
 
-export interface IAppReduxState {
+export interface IAppState {
   pageTitle: string;
 }
 
@@ -17,7 +17,7 @@ export interface IAction {
 }
 
 export interface IState {
-  app: IAppReduxState;
+  app: IAppState;
   movies: IMoviesState;
   series: ISeriesReduxState;
 }
