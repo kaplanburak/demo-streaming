@@ -1,15 +1,17 @@
 import React from "react";
 import { connect } from "react-redux";
+import { ThunkDispatch } from "redux-thunk";
 import "./style.scss";
 import ProgramType from "../../components/ProgramType";
 import { setPageTitle } from "../../actions";
+import { TReduxState, IHomeProps, IAction } from "../../interfaces";
 
-class Home extends React.Component {
-  componentDidMount() {
+class Home extends React.Component<IHomeProps, {}> {
+  componentDidMount(): void {
     this.props.setPageTitle("Popular Titles");
   }
 
-  render() {
+  render(): JSX.Element {
     return (
       <main id="main-home">
         <ProgramType typeName="Series" />
@@ -19,9 +21,9 @@ class Home extends React.Component {
   }
 }
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch: ThunkDispatch<TReduxState, null, IAction>) => {
   return {
-    setPageTitle: title => dispatch(setPageTitle(title))
+    setPageTitle: (title: string) => dispatch(setPageTitle(title))
   };
 };
 
