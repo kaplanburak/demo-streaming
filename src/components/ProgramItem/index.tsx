@@ -1,7 +1,8 @@
 import React from "react";
 import "./style.scss";
+import { IProgramItemProps } from "../../interfaces";
 
-const ProgramItem = ({ title, url }) => {
+const ProgramItem = ({ title, url }: IProgramItemProps): JSX.Element => {
   return (
     <div id="item-wrapper">
       <div id="poster">

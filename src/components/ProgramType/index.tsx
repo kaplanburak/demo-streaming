@@ -2,9 +2,10 @@ import React from "react";
 import { Redirect } from "react-router-dom";
 import "./style.scss";
 import placeholder from "../../assets/placeholder.png";
+import { IProgramTypeProps, IProgramTypeState } from "../../interfaces";
 
-class ProgramType extends React.Component {
-  constructor(props) {
+class ProgramType extends React.Component<IProgramTypeProps, IProgramTypeState> {
+  constructor(props: IProgramTypeProps) {
     super(props);
 
     this.state = {

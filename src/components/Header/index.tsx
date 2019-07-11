@@ -2,8 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import "./style.scss";
+import { TReduxState, IAppState } from "../../interfaces";
 
-const Header = ({ pageTitle }) => {
+const Header = ({ pageTitle }: IAppState): JSX.Element => {
   return (
     <header>
       <nav>
@@ -24,7 +25,7 @@ const Header = ({ pageTitle }) => {
   );
 };
 
-const mapStateToProps = state => {
+const mapStateToProps = (state: TReduxState) => {
   return {
     pageTitle: state.app.pageTitle || ""
   };

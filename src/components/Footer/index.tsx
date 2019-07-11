@@ -8,7 +8,7 @@ import facebook from "../../assets/facebook-white.svg";
 import twitter from "../../assets/twitter-white.svg";
 import instagram from "../../assets/instagram-white.svg";
 
-const Footer = () => {
+const Footer = (): JSX.Element => {
   return (
     <footer>
       <div id="links">
@@ -59,11 +59,7 @@ const Footer = () => {
             <img src={playStore} alt="Play Store" className="svg-store" />
           </button>
           <button className="button-ghost">
-            <img
-              src={microsoftStore}
-              alt="Microsoft Store"
-              className="svg-store"
-            />
+            <img src={microsoftStore} alt="Microsoft Store" className="svg-store" />
           </button>
         </div>
       </div>

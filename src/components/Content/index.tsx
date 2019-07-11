@@ -3,9 +3,10 @@ import "./style.scss";
 import ProgramList from "../ProgramList";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import { IContentState, IContentProps, TEntry } from "../../interfaces";
 
-class Content extends React.Component {
-  constructor(props) {
+class Content extends React.Component<IContentProps, IContentState> {
+  constructor(props: IContentProps) {
     super(props);
 
     this.state = {
@@ -14,23 +15,20 @@ class Content extends React.Component {
     };
   }
 
-  render() {
-    const { list, isLoading, gotError } = this.props;
+  render(): JSX.Element {
+    const { list, isLoading, gotError }: IContentProps = this.props;
     if (isLoading) return <p>Loading...</p>;
     if (gotError) return <p>Oops, something went wrong...</p>;
 
-    const { searchTerm, sortBy } = this.state;
+    const { searchTerm, sortBy }: IContentState = this.state;
     let filteredList = [...list];
 
     if (searchTerm.length > 2) {
-      filteredList = filteredList.filter(item =>
-        item.title.toUpperCase().includes(searchTerm.toUpperCase())
-      );
+      filteredList = filteredList.filter((item: TEntry) => item.title.toUpperCase().includes(searchTerm.toUpperCase()));
     }
 
     if (sortBy.length) {
       const key = sortBy.split("-")[0];
-      const order = sortBy.split("-")[1];
 
       let lessThen = -1;
       let greaterThen = 1;
@@ -40,7 +38,7 @@ class Content extends React.Component {
         greaterThen *= -1;
       }
 
-      filteredList = filteredList.sort((a, b) => {
+      filteredList = filteredList.sort((a: { [index: string]: any }, b: { [index: string]: any }) => {
         let valueA = a[key];
         let valueB = b[key];
 
@@ -54,10 +52,7 @@ class Content extends React.Component {
         return 0;
       });
 
-      console.log(
-        sortBy,
-        filteredList.reduce((arr, i) => [...arr, i[key]], [])
-      );
+      //console.log(sortBy, filteredList.reduce((arr, i) => [...arr, i[key]], []));
     }
 
     return (
@@ -75,25 +70,14 @@ class Content extends React.Component {
             </div>
           </form>
           <form id="sort-form">
-            <select
-              value={sortBy}
-              onChange={e => this.setState({ sortBy: e.target.value })}
-            >
+            <select value={sortBy} onChange={e => this.setState({ sortBy: e.target.value })}>
               <option value="" disabled>
                 Sort by
               </option>
-              <option value="releaseYear-desc">
-                Sort by year in descending order.
-              </option>
-              <option value="releaseYear-asc">
-                Sort by year in ascending order.
-              </option>
-              <option value="title-desc">
-                Sort by title in descending order.
-              </option>
-              <option value="title-asc">
-                Sort by title in ascending order.
-              </option>
+              <option value="releaseYear-desc">Sort by year in descending order.</option>
+              <option value="releaseYear-asc">Sort by year in ascending order.</option>
+              <option value="title-desc">Sort by title in descending order.</option>
+              <option value="title-asc">Sort by title in ascending order.</option>
             </select>
           </form>
         </div>
