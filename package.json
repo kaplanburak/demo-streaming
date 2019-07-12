@@ -17,12 +17,17 @@
     "typeface-raleway": "0.0.54"
   },
   "devDependencies": {
+    "@types/enzyme": "^3.10.2",
     "@types/jest": "^24.0.15",
     "@types/node": "^12.6.1",
     "@types/react": "^16.8.23",
     "@types/react-dom": "^16.8.4",
     "@types/react-redux": "^7.1.1",
     "@types/react-router-dom": "^4.3.4",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0",
+    "enzyme-to-json": "^3.3.5",
+    "ts-jest": "^24.0.2",
     "tslint": "^5.18.0",
     "tslint-react": "^4.0.0",
     "typescript": "^3.5.3"
