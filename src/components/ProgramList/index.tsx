@@ -3,7 +3,7 @@ import "./style.scss";
 import ProgramItem from "../ProgramItem";
 import { IProgramListProps } from "../../interfaces";
 
-const ProgramList = ({ programs }: IProgramListProps): JSX.Element => {
+const ProgramList: React.FC<IProgramListProps> = ({ programs }): JSX.Element => {
   return (
     <div id="program-list">
       {programs.map((p: { [index: string]: any }) => (

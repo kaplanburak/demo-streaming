@@ -8,7 +8,7 @@ import facebook from "../../assets/facebook-white.svg";
 import twitter from "../../assets/twitter-white.svg";
 import instagram from "../../assets/instagram-white.svg";
 
-const Footer = (): JSX.Element => {
+const Footer: React.FC = (): JSX.Element => {
   return (
     <footer>
       <div id="links">

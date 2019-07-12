@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import "./style.scss";
 import { TReduxState, IAppState } from "../../interfaces";
 
-const Header = ({ pageTitle }: IAppState): JSX.Element => {
+const Header: React.FC<IAppState> = ({ pageTitle }): JSX.Element => {
   return (
     <header>
       <nav>
