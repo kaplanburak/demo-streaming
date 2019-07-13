@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProgramItem component should render with props 1`] = `ShallowWrapper {}`;
