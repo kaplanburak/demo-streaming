@@ -1,6 +1,6 @@
 import { ThunkAction } from "redux-thunk";
-import actionTypes from "./ActionTypes";
-import { TReduxState, ISeries, IAction } from "../interfaces";
+import actionTypes from "../../constants/ActionTypes";
+import { TReduxState, ISeries, IAction } from "../../interfaces";
 
 export const getSeries = (): ThunkAction<IAction, TReduxState, null, IAction> => (dispatch): any => {
   const requestAction = { type: actionTypes.series.GET_LIST_REQUEST };

@@ -1,3 +1,3 @@
-export { setPageTitle } from "./AppActions";
-export { getMovies } from "./MoviesActions";
-export { getSeries } from "./SeriesActions";
+export { setPageTitle } from "./App";
+export { getMovies } from "./Movies";
+export { getSeries } from "./Series";

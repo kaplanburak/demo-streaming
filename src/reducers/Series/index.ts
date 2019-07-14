@@ -1,5 +1,5 @@
-import actionTypes from "../actions/ActionTypes";
-import { ISeriesState, IAction } from "../interfaces";
+import actionTypes from "../../constants/ActionTypes";
+import { ISeriesState, IAction } from "../../interfaces";
 
 const initialState: ISeriesState = {
   isLoading: true,

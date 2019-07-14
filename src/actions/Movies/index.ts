@@ -1,6 +1,6 @@
 import { ThunkAction } from "redux-thunk";
-import actionTypes from "./ActionTypes";
-import { TReduxState, IMovie, IAction } from "../interfaces";
+import actionTypes from "../../constants/ActionTypes";
+import { TReduxState, IMovie, IAction } from "../../interfaces";
 
 export const getMovies = (): ThunkAction<IAction, TReduxState, null, IAction> => (dispatch): any => {
   const requestAction = { type: actionTypes.movies.GET_LIST_REQUEST };

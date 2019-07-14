@@ -1,5 +1,5 @@
-import actionTypes from "../actions/ActionTypes";
-import { IAction, IAppState } from "../interfaces";
+import actionTypes from "../../constants/ActionTypes";
+import { IAction, IAppState } from "../../interfaces";
 
 const initialState: IAppState = {
   pageTitle: ""

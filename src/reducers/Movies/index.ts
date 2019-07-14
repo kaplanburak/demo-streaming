@@ -1,5 +1,5 @@
-import actionTypes from "../actions/ActionTypes";
-import { IMoviesState, IAction } from "../interfaces";
+import actionTypes from "../../constants/ActionTypes";
+import { IMoviesState, IAction } from "../../interfaces";
 
 const initialState: IMoviesState = {
   isLoading: true,
