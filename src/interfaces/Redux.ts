@@ -8,7 +8,7 @@ export interface ISeriesReduxState {
 }
 
 export interface IAppState {
-  pageTitle: string;
+  pageTitle?: string;
 }
 
 export interface IAction {
@@ -23,5 +23,3 @@ export interface IState {
 }
 
 export type TReduxState = ReturnType<typeof reducers>;
-
-//export type IDispatch = (action: () => IAction) => IAction;

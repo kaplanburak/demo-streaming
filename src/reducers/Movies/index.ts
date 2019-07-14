@@ -1,7 +1,7 @@
 import actionTypes from "../../constants/ActionTypes";
 import { IMoviesState, IAction } from "../../interfaces";
 
-const initialState: IMoviesState = {
+export const initialState: IMoviesState = {
   isLoading: true,
   gotError: false,
   list: []

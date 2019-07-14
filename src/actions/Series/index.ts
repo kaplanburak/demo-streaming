@@ -6,7 +6,7 @@ export const getSeries = (): ThunkAction<IAction, TReduxState, null, IAction> =>
   const requestAction = { type: actionTypes.series.GET_LIST_REQUEST };
   dispatch(requestAction);
 
-  fetch("./sample.json")
+  return fetch("./sample.json")
     .then(response => response.json())
     .then(data => {
       const series = data.entries

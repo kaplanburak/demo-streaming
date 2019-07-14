@@ -1,7 +1,7 @@
 import actionTypes from "../../constants/ActionTypes";
 import { ISeriesState, IAction } from "../../interfaces";
 
-const initialState: ISeriesState = {
+export const initialState: ISeriesState = {
   isLoading: true,
   gotError: false,
   list: []
