@@ -6,7 +6,7 @@ import ProgramType from "../../components/ProgramType";
 import { setPageTitle } from "../../actions";
 import { TReduxState, IHomeProps, IAction } from "../../interfaces";
 
-class Home extends React.Component<IHomeProps, {}> {
+export class Home extends React.Component<IHomeProps, {}> {
   componentDidMount(): void {
     this.props.setPageTitle("Popular Titles");
   }

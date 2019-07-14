@@ -5,7 +5,7 @@ import { getSeries, setPageTitle } from "../../actions";
 import Content from "../../components/Content";
 import { TReduxState, ISeriesProps, IAction } from "../../interfaces";
 
-class Series extends React.Component<ISeriesProps, {}> {
+export class Series extends React.Component<ISeriesProps, {}> {
   componentDidMount(): void {
     const { setPageTitle, getSeries }: ISeriesProps = this.props;
     setPageTitle("Popular Series");

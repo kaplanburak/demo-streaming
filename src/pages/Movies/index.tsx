@@ -5,7 +5,7 @@ import { getMovies, setPageTitle } from "../../actions";
 import Content from "../../components/Content";
 import { TReduxState, IMoviesProps, IAction } from "../../interfaces";
 
-class Movies extends React.Component<IMoviesProps, {}> {
+export class Movies extends React.Component<IMoviesProps, {}> {
   componentDidMount(): void {
     const { setPageTitle, getMovies }: IMoviesProps = this.props;
     setPageTitle("Popular Movies");
