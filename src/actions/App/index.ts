@@ -1,12 +1,9 @@
-import { ThunkAction } from "redux-thunk";
 import actionTypes from "../../constants/ActionTypes";
-import { TReduxState, IAction } from "../../interfaces";
+import { IAction } from "../../interfaces";
 
-export const setPageTitle = (title: string): ThunkAction<IAction, TReduxState, null, IAction> => (dispatch): any => {
-  const action = {
+export const setPageTitle = (title: string): IAction => {
+  return {
     type: actionTypes.app.SET_PAGE_TITLE,
     payload: title
   };
-
-  dispatch(action);
 };
