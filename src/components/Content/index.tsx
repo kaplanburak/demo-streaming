@@ -6,14 +6,10 @@ import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { IContentState, IContentProps, TEntry } from "../../interfaces";
 
 class Content extends React.Component<IContentProps, IContentState> {
-  constructor(props: IContentProps) {
-    super(props);
-
-    this.state = {
-      searchTerm: "",
-      sortBy: ""
-    };
-  }
+  state = {
+    searchTerm: "",
+    sortBy: ""
+  };
 
   render(): JSX.Element {
     const { list, isLoading, gotError }: IContentProps = this.props;
