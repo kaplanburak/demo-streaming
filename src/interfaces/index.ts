@@ -2,6 +2,7 @@ export * from "./Home";
 export * from "./Movies";
 export * from "./Series";
 export * from "./Content";
+export * from "./Header";
 export * from "./ProgramItem";
 export * from "./ProgramList";
 export * from "./ProgramType";

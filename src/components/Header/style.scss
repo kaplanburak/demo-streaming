@@ -1,5 +1,9 @@
 @import "../../styles/main.scss";
 
+.hidden {
+  display: none !important;
+}
+
 header {
   min-height: 7rem;
   background-color: $gray;

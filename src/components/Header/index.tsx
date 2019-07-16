@@ -2,35 +2,48 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import "./style.scss";
-import { TReduxState, IAppState } from "../../interfaces";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { TReduxState, IHeaderState, IHeaderProps } from "../../interfaces";
+import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-export const Header: React.FC<IAppState> = ({ pageTitle }): JSX.Element => {
-  return (
-    <header>
-      <nav>
-        <div id="nav-title">
-          <div>
-            <h1>
-              <Link to="/">DEMO Streaming</Link>
-            </h1>
+export class Header extends React.Component<IHeaderProps, IHeaderState> {
+  state = {
+    menuIsOpen: false
+  };
+
+  render(): JSX.Element {
+    const { menuIsOpen } = this.state;
+
+    return (
+      <header>
+        <nav>
+          <div id="nav-title">
+            <div>
+              <h1>
+                <Link to="/">DEMO Streaming</Link>
+              </h1>
+            </div>
+            <div id="menu">
+              <div onClick={() => this.setState({ menuIsOpen: true })} className={menuIsOpen ? "hidden" : ""}>
+                <FontAwesomeIcon icon={faBars} size="2x" />
+              </div>
+              <div onClick={() => this.setState({ menuIsOpen: false })} className={!menuIsOpen ? "hidden" : ""}>
+                <FontAwesomeIcon icon={faTimes} size="2x" />
+              </div>
+            </div>
           </div>
-          <div id="menu">
-            <FontAwesomeIcon icon={faBars} size="2x" />
+          <div id="nav-buttons" className={!menuIsOpen ? "hidden" : ""}>
+            <button className="button-ghost">Log in</button>
+            <button id="button-gray">Start your free trial</button>
           </div>
+        </nav>
+        <div id="page-title">
+          <h2>{this.props.pageTitle}</h2>
         </div>
-        <div id="nav-buttons">
-          <button className="button-ghost">Log in</button>
-          <button id="button-gray">Start your free trial</button>
-        </div>
-      </nav>
-      <div id="page-title">
-        <h2>{pageTitle}</h2>
-      </div>
-    </header>
-  );
-};
+      </header>
+    );
+  }
+}
 
 const mapStateToProps = (state: TReduxState) => {
   return {
