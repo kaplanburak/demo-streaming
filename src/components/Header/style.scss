@@ -57,3 +57,50 @@ header {
     font-size: 1.5rem;
   }
 }
+
+#menu {
+  cursor: pointer;
+  display: none;
+}
+
+@media only screen and (max-width: 735px) {
+  nav {
+    flex-direction: column;
+  }
+
+  #nav-title {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+
+  //nav buttons open
+  #nav-buttons {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    button:first-child {
+      margin-bottom: 0.5rem;
+    }
+
+    button {
+      width: 100%;
+    }
+  }
+
+  h1,
+  h2 {
+    text-align: center;
+  }
+
+  #button-gray {
+    margin-left: 0;
+  }
+
+  #menu {
+    display: block;
+  }
+}

@@ -36,7 +36,7 @@ const Footer: React.FC = (): JSX.Element => {
           Manage Account
         </Link>
       </div>
-      <div>
+      <div id="copyright">
         <p>Copyright &copy; 2016 DEMO Streaming. All Rights Reserved.</p>
       </div>
       <div id="buttons">

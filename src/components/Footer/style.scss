@@ -25,12 +25,8 @@ p {
   opacity: 0.6;
 }
 
-#links {
-  margin-bottom: 1rem;
-
-  > * {
-    opacity: 0.8;
-  }
+#links a {
+  opacity: 0.8;
 }
 
 .link-footer {
@@ -67,4 +63,48 @@ p {
 
 .svg-social {
   height: 1.8rem;
+}
+
+@media only screen and (max-width: 870px) {
+  #links {
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1.4rem;
+
+    a,
+    span {
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  #copyright {
+    text-align: center;
+  }
+
+  #buttons {
+    div {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      margin-bottom: 1.4rem;
+
+      button {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+      }
+    }
+  }
+
+  #buttons-store {
+    flex-direction: column;
+
+    button {
+      margin-bottom: 0.6rem;
+    }
+  }
 }

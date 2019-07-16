@@ -27,7 +27,7 @@ p {
     align-items: center;
 
     input {
-      width: 30rem;
+      width: 24rem;
     }
 
     div {
@@ -40,7 +40,7 @@ p {
 
   #sort-form {
     select {
-      width: 20rem;
+      width: 16rem;
       -webkit-appearance: none;
       -moz-appearance: none;
       appearance: none;
@@ -66,4 +66,21 @@ p {
 
 #select-placeholder {
   color: rgba(0, 0, 0, 0.5);
+}
+
+@media only screen and (max-width: 1023px) {
+  #filters {
+    flex-direction: column;
+
+    form:first-child {
+      margin-bottom: 1rem;
+    }
+
+    #search-form,
+    #search-form > input,
+    #sort-form,
+    #sort-form > select {
+      width: 100%;
+    }
+  }
 }
