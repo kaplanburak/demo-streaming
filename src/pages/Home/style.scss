@@ -1,7 +1,7 @@
 @import "../../styles/main.scss";
 
-#wrapper {
+#main-wrapper {
   display: grid;
-  grid-template-columns: repeat(auto-fill, $card-width);
+  grid-template-columns: repeat(auto-fill, 10rem);
   grid-gap: 2rem;
 }
