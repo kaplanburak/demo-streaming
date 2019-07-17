@@ -3,5 +3,5 @@
 #main-home {
   display: grid;
   grid-template-columns: repeat(auto-fill, $card-width);
-  grid-gap: 0.5rem;
+  grid-gap: 2rem;
 }

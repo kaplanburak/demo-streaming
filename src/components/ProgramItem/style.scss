@@ -1,17 +1,12 @@
 @import "../../styles/main.scss";
 
-#item-wrapper {
-  padding-bottom: 3rem;
-  max-width: $card-width;
-}
-
 #poster {
-  width: $card-width;
-  height: $card-height;
+  width: 100%;
   cursor: pointer;
 
   img {
-    width: 10rem;
+    width: 100%;
+    max-width: 14rem;
     @include light-shadow();
   }
 }
@@ -19,9 +14,19 @@
 #title {
   padding-top: 1rem;
   cursor: pointer;
+  position: relative;
+  bottom: 0;
+  z-index: 100;
 
   span {
     margin: 0;
     font-weight: 500;
+  }
+}
+@media only screen and (max-width: 1023px) {
+  #poster {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 }
