@@ -13,6 +13,7 @@ export class Header extends React.Component<IHeaderProps, IHeaderState> {
 
   render(): JSX.Element {
     const { menuIsOpen } = this.state;
+    console.log("menuIsOpen: ", menuIsOpen);
 
     return (
       <header>

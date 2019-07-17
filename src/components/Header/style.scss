@@ -1,9 +1,5 @@
 @import "../../styles/main.scss";
 
-.hidden {
-  display: none !important;
-}
-
 header {
   min-height: 7rem;
   background-color: $gray;
@@ -68,6 +64,10 @@ header {
 }
 
 @media only screen and (max-width: 735px) {
+  .hidden {
+    display: none !important;
+  }
+
   nav {
     flex-direction: column;
   }
@@ -77,7 +77,6 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 1rem;
   }
 
   //nav buttons open
