@@ -1,6 +1,6 @@
 @import "../../styles/main.scss";
 
-#wrapper {
+#programs__item {
   width: 100%;
   cursor: pointer;
 
@@ -11,11 +11,8 @@
   }
 
   div {
-    padding-top: 1rem;
-    cursor: pointer;
-    position: relative;
-    bottom: 0;
     z-index: 100;
+    padding-top: 0.5rem;
 
     span {
       margin: 0;
@@ -25,7 +22,7 @@
 }
 
 @media only screen and (max-width: 500px) {
-  #wrapper {
+  #programs__item {
     display: grid;
     place-items: center;
   }
