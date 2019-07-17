@@ -29,7 +29,7 @@ p {
   opacity: 0.8;
 }
 
-.link-footer {
+.links__element {
   color: white;
   text-decoration: none;
 
@@ -44,24 +44,20 @@ p {
   justify-content: space-between;
   margin-top: 2rem;
 
-  #buttons-social {
-    button {
-      margin-right: 1.5rem;
-    }
+  #buttons__social button {
+    margin-right: 1.5rem;
   }
 
-  #buttons-store {
-    button {
-      margin-left: 1.5rem;
-    }
+  #buttons__store button {
+    margin-left: 1.5rem;
   }
 }
 
-.svg-store {
+.svg--store {
   height: 2.5rem;
 }
 
-.svg-social {
+.svg--social {
   height: 1.8rem;
 }
 
@@ -100,7 +96,7 @@ p {
     }
   }
 
-  #buttons-store {
+  #buttons__store {
     flex-direction: column;
 
     button {

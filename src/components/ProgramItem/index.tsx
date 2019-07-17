@@ -4,9 +4,9 @@ import { IProgramItemProps } from "../../interfaces";
 
 const ProgramItem: React.FC<IProgramItemProps> = ({ title, url }): JSX.Element => {
   return (
-    <div id="poster">
+    <div id="wrapper">
       <img src={url} alt={title} />
-      <div id="title">
+      <div>
         <span>{title}</span>
       </div>
     </div>

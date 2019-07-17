@@ -1,6 +1,6 @@
 @import "../../styles/main.scss";
 
-#poster {
+#wrapper {
   width: 100%;
   cursor: pointer;
 
@@ -9,22 +9,23 @@
     max-width: 14rem;
     @include light-shadow();
   }
-}
 
-#title {
-  padding-top: 1rem;
-  cursor: pointer;
-  position: relative;
-  bottom: 0;
-  z-index: 100;
+  div {
+    padding-top: 1rem;
+    cursor: pointer;
+    position: relative;
+    bottom: 0;
+    z-index: 100;
 
-  span {
-    margin: 0;
-    font-weight: 500;
+    span {
+      margin: 0;
+      font-weight: 500;
+    }
   }
 }
-@media only screen and (max-width: 479px) {
-  #poster {
+
+@media only screen and (max-width: 500px) {
+  #wrapper {
     display: grid;
     place-items: center;
   }

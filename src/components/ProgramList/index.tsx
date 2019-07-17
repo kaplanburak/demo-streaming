@@ -5,7 +5,7 @@ import { IProgramListProps } from "../../interfaces";
 
 const ProgramList: React.FC<IProgramListProps> = ({ programs }): JSX.Element => {
   return (
-    <div id="program-list">
+    <div id="wrapper">
       {programs.map((p: { [index: string]: any }) => (
         <ProgramItem key={p.title} title={p.title} url={p.images["Poster Art"].url} />
       ))}

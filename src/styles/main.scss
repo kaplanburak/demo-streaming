@@ -1,4 +1,4 @@
-$side-spacing: 10vw;
+  $side-spacing: 10vw;
 $card-width: 10rem;
 $card-height: 15rem;
 
@@ -15,7 +15,7 @@ main {
   min-height: calc(100vh - 27rem);
 }
 
-.button-ghost {
+.button--ghost {
   margin: 0;
   padding: 0;
   border: none;

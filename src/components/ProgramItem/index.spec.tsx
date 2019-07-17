@@ -12,7 +12,7 @@ describe("ProgramItem component", () => {
   it("should have the url as image source", () => {
     expect(
       programItem
-        .find("#poster")
+        .find("#wrapper")
         .childAt(0)
         .props().src
     ).toEqual("https://google.com");

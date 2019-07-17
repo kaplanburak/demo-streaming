@@ -36,7 +36,7 @@ header {
   }
 }
 
-#button-gray {
+#button--gray {
   border: none;
   padding: 0.6rem;
   margin-left: 2rem;
@@ -58,7 +58,7 @@ header {
   }
 }
 
-#menu {
+#nav__menu {
   cursor: pointer;
   display: none;
 }
@@ -72,7 +72,7 @@ header {
     flex-direction: column;
   }
 
-  #nav-title {
+  #nav__title {
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -80,7 +80,7 @@ header {
   }
 
   //nav buttons open
-  #nav-buttons {
+  #nav__buttons {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -99,11 +99,11 @@ header {
     text-align: center;
   }
 
-  #button-gray {
+  #button--gray {
     margin-left: 0;
   }
 
-  #menu {
+  #nav__menu {
     display: block;
   }
 }

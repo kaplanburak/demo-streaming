@@ -13,7 +13,7 @@ export class Home extends React.Component<IHomeProps, {}> {
 
   render(): JSX.Element {
     return (
-      <main id="main-home">
+      <main id="wrapper">
         <ProgramType typeName="Series" />
         <ProgramType typeName="Movies" />
       </main>

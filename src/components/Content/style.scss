@@ -4,7 +4,7 @@ p {
   font-weight: 600;
 }
 
-#filters {
+#forms {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -22,7 +22,7 @@ p {
     }
   }
 
-  #search-form {
+  &__search {
     display: flex;
     align-items: center;
 
@@ -38,7 +38,7 @@ p {
     }
   }
 
-  #sort-form {
+  &__sort {
     select {
       width: 16rem;
       -webkit-appearance: none;
@@ -54,7 +54,7 @@ p {
   }
 }
 
-#icon-button {
+#button--icon {
   background-color: $blue;
   color: white;
   cursor: pointer;
@@ -64,22 +64,18 @@ p {
   }
 }
 
-#select-placeholder {
-  color: rgba(0, 0, 0, 0.5);
-}
-
 @media only screen and (max-width: 1023px) {
-  #filters {
+  #forms {
     flex-direction: column;
 
     form:first-child {
       margin-bottom: 1rem;
     }
 
-    #search-form,
-    #search-form > input,
-    #sort-form,
-    #sort-form > select {
+    #forms__search,
+    #forms__search > input,
+    #forms__sort,
+    #forms__sort > select {
       width: 100%;
     }
   }

@@ -12,27 +12,27 @@ const Footer: React.FC = (): JSX.Element => {
   return (
     <footer>
       <div id="links">
-        <Link to="/" className="link-footer">
+        <Link to="/" className="links__element">
           Home
         </Link>
         <span>|</span>
-        <Link to="/" className="link-footer">
+        <Link to="/" className="links__element">
           Terms and Conditions
         </Link>
         <span>|</span>
-        <Link to="/" className="link-footer">
+        <Link to="/" className="links__element">
           Privacy Policy
         </Link>
         <span>|</span>
-        <Link to="/" className="link-footer">
+        <Link to="/" className="links__element">
           Collection Statement
         </Link>
         <span>|</span>
-        <Link to="/" className="link-footer">
+        <Link to="/" className="links__element">
           Help
         </Link>
         <span>|</span>
-        <Link to="/" className="link-footer">
+        <Link to="/" className="links__element">
           Manage Account
         </Link>
       </div>
@@ -40,26 +40,26 @@ const Footer: React.FC = (): JSX.Element => {
         <p>Copyright &copy; 2016 DEMO Streaming. All Rights Reserved.</p>
       </div>
       <div id="buttons">
-        <div id="buttons-social">
-          <button className="button-ghost">
-            <img src={facebook} alt="Facebook" className="svg-social" />
+        <div id="buttons__social">
+          <button className="button--ghost">
+            <img src={facebook} alt="Facebook" className="svg--social" />
           </button>
-          <button className="button-ghost">
-            <img src={twitter} alt="Twitter" className="svg-social" />
+          <button className="button--ghost">
+            <img src={twitter} alt="Twitter" className="svg--social" />
           </button>
-          <button className="button-ghost">
-            <img src={instagram} alt="Instagram" className="svg-social" />
+          <button className="button--ghost">
+            <img src={instagram} alt="Instagram" className="svg--social" />
           </button>
         </div>
-        <div id="buttons-store">
-          <button className="button-ghost">
-            <img src={appStore} alt="App Store" className="svg-store" />
+        <div id="buttons__store">
+          <button className="button--ghost">
+            <img src={appStore} alt="App Store" className="svg--store" />
           </button>
-          <button className="button-ghost">
-            <img src={playStore} alt="Play Store" className="svg-store" />
+          <button className="button--ghost">
+            <img src={playStore} alt="Play Store" className="svg--store" />
           </button>
-          <button className="button-ghost">
-            <img src={microsoftStore} alt="Microsoft Store" className="svg-store" />
+          <button className="button--ghost">
+            <img src={microsoftStore} alt="Microsoft Store" className="svg--store" />
           </button>
         </div>
       </div>

@@ -13,18 +13,17 @@ export class Header extends React.Component<IHeaderProps, IHeaderState> {
 
   render(): JSX.Element {
     const { menuIsOpen } = this.state;
-    console.log("menuIsOpen: ", menuIsOpen);
 
     return (
       <header>
         <nav>
-          <div id="nav-title">
+          <div id="nav__title">
             <div>
               <h1>
                 <Link to="/">DEMO Streaming</Link>
               </h1>
             </div>
-            <div id="menu">
+            <div id="nav__menu">
               <div onClick={() => this.setState({ menuIsOpen: true })} className={menuIsOpen ? "hidden" : ""}>
                 <FontAwesomeIcon icon={faBars} size="2x" />
               </div>
@@ -33,9 +32,9 @@ export class Header extends React.Component<IHeaderProps, IHeaderState> {
               </div>
             </div>
           </div>
-          <div id="nav-buttons" className={!menuIsOpen ? "hidden" : ""}>
-            <button className="button-ghost">Log in</button>
-            <button id="button-gray">Start your free trial</button>
+          <div id="nav__buttons" className={!menuIsOpen ? "hidden" : ""}>
+            <button className="button--ghost">Log in</button>
+            <button id="button--gray">Start your free trial</button>
           </div>
         </nav>
         <div id="page-title">

@@ -53,19 +53,19 @@ class Content extends React.Component<IContentProps, IContentState> {
 
     return (
       <div>
-        <div id="filters">
-          <form id="search-form">
+        <div id="forms">
+          <form id="forms__search">
             <input
               type="text"
               placeholder="Search..."
               onChange={e => this.setState({ searchTerm: e.target.value })}
               value={searchTerm}
             />
-            <div id="icon-button">
+            <div id="button--icon">
               <FontAwesomeIcon icon={faSearch} />
             </div>
           </form>
-          <form id="sort-form">
+          <form id="forms__sort">
             <select value={sortBy} onChange={e => this.setState({ sortBy: e.target.value })}>
               <option value="" disabled>
                 Sort by
